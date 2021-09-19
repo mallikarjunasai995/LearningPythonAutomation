@@ -19,5 +19,3 @@ def speak(animal="dog"):
 '''-------------------------------------------'''
   #keywordArguments
   #diff b/n keyword args and default paramters
-  
-  
