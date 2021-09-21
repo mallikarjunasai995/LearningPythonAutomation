@@ -1,3 +1,13 @@
+#simpleconversionofstring2dict
+def multiple_letter_count(string):
+	    #return {letter: string.count(letter) for letter in string}
+	    dicti = {}
+	    for letter in string:
+	        dicti[letter] = string.count(letter)
+	    return dicti
+	    
+multiple_letter_count('stringgg')
+
 inventory = {'croissant': 19, 'bagel': 4, 'muffin': 8, 'cake': 1} #DON'T CHANGE THIS LINE!
 # Make a copy of inventory and save it to a variable called stock_list
 stock_list = inventory.copy()
