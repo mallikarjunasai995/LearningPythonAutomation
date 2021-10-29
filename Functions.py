@@ -19,3 +19,15 @@ def speak(animal="dog"):
 '''-------------------------------------------'''
   #keywordArguments
   #diff b/n keyword args and default paramters
+def myFun(**kwargs):
+    for key, value in kwargs.items():
+        print ("%s == %s" %(key, value))
+ 
+# Driver code
+myFun(first ='Geeks', mid ='for', last='Geeks')   
+
+def myfun(*argv):
+  for item in argv:
+    print(item)
+
+myfun('mallik','hasty')
