@@ -3,8 +3,8 @@
 
 months = ('january','februaruy','march','april')
 locations = {
-  (1.03,2.05):"Tokyo office"
-  (1.23,2.98):"Chaina"
+  (1.03,2.05):"Tokyo office",
+  (1.23,2.98): "Chaina"
 }
 
 #sets
