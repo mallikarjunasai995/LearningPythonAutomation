@@ -3,7 +3,7 @@ def colorize(text, color):
     if type(text) is not str:
         #comment-firstdebugerrorhandling,valueerror
         raise TypeError("text must be instance of str")
-    print(f"Printed {text} in {color}")
+    print(f"Printed {text} in {color}",text,color)
 colorize("hello","red")
 #try,except,finally
 d = {"1":"am first"}
