@@ -66,5 +66,41 @@ Meow = Cat('meow','smalllion','kuttilion','beblade')
 print(Meow)
 
 
-#multiple inheritance - 
-    
+#multiple inheritance - getting access to methiods from multiple classes - Class Penguin(Ambulartory,Aquatic) --- here first one which is amubulatory has a preference and 
+#calls when init happens as a super method , order is important
+#---------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------
+#Polymorphism - 
+#   1. same class method works in a similar way for different classes 
+#   2. common use case is method overriding - method in base class is overriden by subclass
+# same opertion works for differnt kinds of objects -- example special methods which is shown below
+
+class Human: 
+    def __init__(self, height):
+        self.height = height
+    def __len__(self):
+        return self.height
+    def __repr__(self):
+        return str(self.height)
+m = Human(60)
+print(m)
+print(len(m))
+
+
+
+
+#grumpydict
+
+class GrumpyDict(dict):
+    def __repr__(self):
+        print('none of your business')
+        return super().__repr__()
+    def __missing__(self, key):
+        pass
+
+
+
+
+data = GrumpyDict({"name":"malli","age":"26"})
+print(data)
+
