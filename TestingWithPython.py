@@ -14,12 +14,12 @@
 #doctestsexercisers:
 #python -m doctest -v filename.py
 
-def add(x,y):
-    """
-    >>> add(100,200) 
-    300
-    """
-    return x + y
+# def add(x,y):
+#     """
+#     >>> add(100,200) 
+#     300
+#     """
+#     return x + y
 
 # def doubles(values):
 #     """double the values in a list
@@ -31,6 +31,19 @@ def add(x,y):
 #------------------------------------------------------------
 #------------------------------------------------------------
 #unittests : testing with small individual components
+
+# def eat(food,ishealthy):
+#     ending = "I am true and healthy"
+#     if ishealthy:
+#         ending = "I am not true and healthy"
+#     return "I am true and healthy"  
+#     # pass
+
+# def nap(num_hours):
+#     pass
+
+
+#setupandteardown methods 
 
 
 
