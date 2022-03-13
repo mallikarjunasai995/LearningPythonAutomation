@@ -20,9 +20,23 @@ def filesizelist(folderfile):
 
 def failpoint_text(full_path,linenum):
     newlinenum = linenum - 50
-    print(newlinenum)
-    print(os.stat(full_path))
+    # print(newlinenum)
+    # print(os.stat(full_path))
+    with open(full_path,'r') as file:
+        # for i,line in enumerate(file):
+        #     for i in range(newlinenum,linenum):
+        #         print(line)
+        content = file.readlines()
+        #print(content[linenum-1])
+        failure_content = content[newlinenum:linenum]
+        #print(failure_content)
+    print(failure_content)
+    with open('failureresult.txt','a') as file1:
+        for i in failure_content:
 
+            file1.write(i)
+        file1.write('-------------------\n\n')
+        file1.write('------------------======-------')
 
 def open_folder(key,input):
     res = re.search(r'\d{5}_'+key+r'_\d', input)
@@ -47,10 +61,10 @@ def open_folder(key,input):
                   
 DIR_PATH = 'C:\\Users\\7330728\\Desktop\\NewLogs2'
 data = next(os.walk(DIR_PATH))[1]
-keyelements = ['1597977']
+keyelements = ['1597977','1597978']
 for key in keyelements:
     for i in data:
         #print(type(i))
         #print(os.path.join(DIR_PATH,KEY))
         open_folder(key,i)
-        break
+        
