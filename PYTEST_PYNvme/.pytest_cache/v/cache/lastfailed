@@ -1,0 +1,5 @@
+{
+  "pytest_01.py::test_exercise": true,
+  "pytest_01.py::check_exercise": true,
+  "test_01.py::test_exercise": true
+}
