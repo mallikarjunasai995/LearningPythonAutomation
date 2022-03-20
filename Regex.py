@@ -5,7 +5,7 @@
 #logical OR and character gorups = | - logical or  , paranthesis ()
 #REGULAR expression objects - once compile then use multiple times
 #module regex - compile it everytime and search for string
-
+import pythonjson
 import re
 import os
 import glob
@@ -97,6 +97,7 @@ def open_folder(key,input):
     
 DIR_PATH = 'C:\\Users\\7330728\\Desktop\\NewLogs2'
 data = next(os.walk(DIR_PATH))[1]
+print(pythonjson.failedinstanceID)
 keyelements = ['1597977']
 #print(data)
 #print(keyelements)
@@ -121,6 +122,10 @@ for key in keyelements:
 
 # for root,dirs,files in os.walk(DIR_PATH):
 #     print(files)
+for i in data:
+	print(type(i))
+	key1 = str(key)
+    
 
 
 
