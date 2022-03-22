@@ -1,4 +1,5 @@
 #OOOPS........ #classes/objects
+# everything in python is object which has attributes and methods(nothing but functions in the class)
 #__ - underscore before any method represents private methods
 #Encapsulation - the grouping lo public and private attributes and methods into a programmatic class, making abstraction possible
 #Example - Designing a deck class , make cards a private attribute(list)

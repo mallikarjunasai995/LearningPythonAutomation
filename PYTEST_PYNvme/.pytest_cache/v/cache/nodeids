@@ -1,6 +1,17 @@
 [
+  "conftest.py::test_setup04",
   "pytest_01.py::check_exercise",
   "pytest_01.py::test_exercise",
+  "pytest_fixtures.py::test_checkrequest",
+  "pytest_fixtures.py::test_extendlist",
+  "test_01.py::test_exampleassertion",
   "test_01.py::test_exercise",
-  "test_02.py::test_exercise02"
+  "test_02.py::test_exercise02",
+  "test_fixtures.py::test_checkrequest",
+  "test_parameterize.py::test_fix_params01[fixture010]",
+  "test_parameterize.py::test_fix_params01[fixture011]",
+  "test_parameterize.py::test_param01[2-4]",
+  "test_parameterize.py::test_param01[3-27]",
+  "test_parameterize.py::test_param01[3-28]",
+  "test_parameterize.py::test_param01[4-256]"
 ]
