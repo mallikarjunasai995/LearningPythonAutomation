@@ -9,6 +9,13 @@ def example01(request):
     yield 52
 
 
+# commandlineoptions
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--pciaddr", action="store", default="", help="pci (BDF) address of the device under test, e.g.: 0000:01:00.0"
+    )
+
 
 
 

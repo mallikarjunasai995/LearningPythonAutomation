@@ -1,7 +1,6 @@
 {
   "pytest_01.py::test_exercise": true,
   "pytest_01.py::check_exercise": true,
-  "test_01.py::test_exampleassertion": true,
   "test_parameterize.py::test_param01[3-28]": true,
   "pytest_fixtures.py::test_extendlist": true
 }
