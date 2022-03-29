@@ -6,6 +6,7 @@ import sys
 def find_string_linenum(abs_path):
     stringie = 'DUMPLOG_NVME_REG'
     perf_io = 'FillDisk FAILED!'
+    smart_verify = 'Smart Data Verification failed.'
     with open(abs_path,"r") as myFile:
         for num, line in enumerate(myFile, 1):
             if perf_io in line:
@@ -15,6 +16,8 @@ def find_string_linenum(abs_path):
             if stringie in line:
                 # print('in stringline fucntion',type(num))
                 # print(line)
+                return num
+            if smart_verify in line:
                 return num
         newnum = num -1
         return newnum

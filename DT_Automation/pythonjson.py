@@ -2,17 +2,27 @@ import json
 import requests
 import time
 import re
+import sys
+from termcolor import colored
 # Name/Value pairs: Represents Data, name is followed by ‘:'(colon) and the Name/Value pairs separated by, (comma).
 # Curly braces: Holds objects.
 # Square brackets: Hold arrays with values separated by, (comma).
-import jmespath
+# import jmespath
 print('hi am there')
 # json_string = '{"name": "erik", "age": 38, "married": true}'
 # result = json.loads(json_string)
 # print(type(result))
 # print(result)
+try:
+    launchID = sys.argv[1]
+    print(launchID)
+except IndexError:
+    text = colored("Please specify launchID",color="red")
+    print(text)
+    sys.exit(0)
+# sys.exit(0)
 url = 'http://css-star-dvv-uls-api.wdc.com:8080/Api/Execution/GetExecutionCycleTestCaseDetails'
-data = {"ExecutionCycleId":42881,"CurrentStatus":"","TestCaseNm":"","HostName":"","DutSerialNbr":"","ExecutionCycleOperationWorkflowIds":""}
+data = {"ExecutionCycleId":launchID,"CurrentStatus":"","TestCaseNm":"","HostName":"","DutSerialNbr":"","ExecutionCycleOperationWorkflowIds":""}
 response = requests.post(url,json.dumps(data),headers={"Content-Type":"application/json"})
 time.sleep(3)
 #print(response.json())
@@ -37,9 +47,6 @@ for i in finres:
 print(test_names)
 # print((failedinstanceID))
 # print(test_names)
-        
-    
-
 # with open('content.json','w') as jsonfile:
 #     json.dump(finres, jsonfile)
 # for i in result:

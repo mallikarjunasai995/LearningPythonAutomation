@@ -1,14 +1,14 @@
 """ import random as omg_so_random
 #part of modules
 from random import choice,randint """
-import pyfiglet
-from termcolor import colored
-text = colored("hi there",color="red")
-#pyfiglet.figlet_format(text)
-with open('example.txt','w') as fileobject:
-    fileobject.write(colored("hi there",color="red"))
-print (text)
-print("hi am there")
+# import pyfiglet
+# from termcolor import colored
+# text = colored("hi there",color="red")
+# #pyfiglet.figlet_format(text)
+# with open('example.txt','w') as fileobject:
+#     fileobject.write(colored("hi there",color="red"))
+# print (text)
+# print("hi am there")
 
 
 # print("\033[0;37;40m Normal text\n")
@@ -31,3 +31,10 @@ print("hi am there")
 #module-dunder--plscheckout sayhi and saysup files
 #---init--- checkout article and write here
 
+
+
+import sys
+  
+print("This is the name of the program:", sys.argv[1])
+  
+print("Argument List:", str(sys.argv))
