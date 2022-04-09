@@ -8,6 +8,10 @@
 #methodnames/Variables - snakeCase
 #__init__(self,x,x) - is like constructor for a class aka default method
 #self keyword refers to the current class of an instance
+
+
+# Accessing attributes and methods of one class in another class -- ??
+# Accessing Attributes and Methods in Python -- ??
 # Define Bank Account Below:
 # class BankAccount:
 #     def __init__(self,owner):

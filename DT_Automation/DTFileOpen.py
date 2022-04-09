@@ -115,13 +115,14 @@ for key,testnm in zip(keyelements,tst_names):
 
 
 #TO-DO : 
-#1. Remove junk data and find the exact failure -44249 ----NVMeReset_AbruptResetPSIO072_055________1689970____
+#1.todo - pending - Remove junk data and find the exact failure -44249 ----NVMeReset_AbruptResetPSIO072_055________1689970____
 #2. exception handling -
     #a. what if there is no dumpnvme_log - need to find out another string or just copy the last 50 lines
-            # i) smart verification log - match the string if there is no dumplog
+            # i) smart verification log - match the string if there is no dumplog - done
             # ii) 
     #b. pio_timeout  - fill disk failed string - 1689980 - 44249 - done
-    #c. 
+    #c. setget launchID - 45687 , Telemetry - 45687  - need to find out error keyword and accordingly extract lines
+
 
 
 # import re

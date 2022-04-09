@@ -11,3 +11,9 @@ pip install -r requirements.txt - will install all requirements in another syste
 #need to create a virtual envirornments and start practicing programs to run on any evnvirornments without disturbing the main setup/system python packages
 
 
+
+
+git : 
+
+1. list all branches and search for specific string -- 
+git branch -a --list "*telemetry*"
