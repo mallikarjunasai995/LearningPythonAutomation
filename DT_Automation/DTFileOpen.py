@@ -39,19 +39,52 @@ def filesizelist(folderfile):
 def failpoint_text(full_path,linenum,testnm,key):
     if linenum:
         newlinenum = linenum - 50
-        # print(newlinenum)
-        # print(os.stat(full_path))
         with open(full_path,'r') as file:
             # for i,line in enumerate(file):
             #     for i in range(newlinenum,linenum):
             #         print(line)
             content = file.readlines()
             failure_content = content[newlinenum:linenum]
-            #print(failure_content)
-        # print(failure_content)
+            newstring = 'Error:'
+            flag = 0
+            for line in failure_content:
+                # if perf_io or smart_verify in line:
+                #     flag = 1
+                #     print('am in perfio loop')
+                #     break
+                if newstring in line:
+                    flag = 1
+                    print('string found')
+                    break
+                
+
+            if flag == 1:
+                print ('string found')
+            else:
+                failure_content = 'mallik'
+                print('still not found - search for the error: keyword in file')
+                errorkeyword = content[:newlinenum][::-1]
+                print(type(content[:newlinenum][::-1]))
+                count = 0
+                errorline = ''
+                lists = []
+                for linenumu,i in enumerate(errorkeyword):
+                    if newstring in i:
+                        count = count + 1
+                        lists.append(i)
+                        if count >2:
+                          break
+                # print(lists[0])
+                for index,line in enumerate(content):
+                    if lists[0] == line:
+                        print(index)
+                        break
+                failure_content = content[index-50:index]
+            # print(failure_content)
+            
         with open('failureresult.txt','a') as file1:
             file1.write('\n \n')
-            file1.write('----'+testnm+'______'+'__'+str(key)+'____')
+            file1.write('Test Name: '+testnm+ 'Test ID: '+str(key)+'Launch ID: '+ str(pythonjson.launchID))
             file1.write('\n')
             for i in failure_content:
                 file1.write(i)
@@ -61,7 +94,7 @@ def failpoint_text(full_path,linenum,testnm,key):
     else:
         with open('failureresult.txt','a') as file2:
             file2.write("Could be setup issue/drive issue - din't find dump logs")
-            file2.write('----'+testnm+'______'+'__'+str(key)+'____')
+            file1.write('Test Name: '+testnm+ 'Test ID: '+str(key)+'Launch ID: '+ str(pythonjson.launchID))
             file2.write('\n')
             file2.write('------------------======------------------------------------------------------------------\n')
             file2.write('\n')
@@ -92,10 +125,8 @@ def open_folder(key,input,testnm):
                         #print('in folder function',type(linenum))
                         #print(type(linenum))
                         failpoint_text(full_path,linenum,testnm,key)
-
                  
 DIR_PATH = 'D:\\tests\\NewLogs2'
-# DIR_PATH = 'D:\\tests\\NewLogs2'
 data = next(os.walk(DIR_PATH))[1]
 # print(data)
 # sys.exit(0)
