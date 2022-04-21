@@ -16,7 +16,10 @@ def find_string_linenum(abs_path):
             if stringie in line:
                 # print('in stringline fucntion',type(num))
                 # print(line)
-                return num
+                #for error keyword do soemthing here
+                fin_num = finderrorkey(abs_path,num,)
+
+                return fin_num
             if smart_verify in line:
                 return num
         newnum = num -1
@@ -35,7 +38,50 @@ def filesizelist(folderfile):
                 listie = os.stat(abs_path).st_size
                 lists.append(listie)
     return min(lists) if lists else None
+def finderrorkey(abs_path,num):
 
+    newlinenum = num - 50
+    with open(abs_path,'r') as file:
+
+            # for i,line in enumerate(file):
+            #     for i in range(newlinenum,linenum):
+            #         print(line)
+        content = file.readlines()
+        failure_content = content[newlinenum:num]
+        newstring = 'Error:'
+        flag = 0
+        for line in failure_content:
+            if newstring in line:
+                flag = 1
+                print('string found')
+                break
+
+        if flag == 1:
+            # print ('string found')
+            return num
+        else:
+            failure_content = 'mallik'
+            print('still not found - search for the error: keyword in file')
+            errorkeyword = content[:newlinenum][::-1]
+            # print(type(content[:newlinenum][::-1]))
+            count = 0
+            lists = []
+            for i in errorkeyword:
+                if newstring in i:
+                    count = count + 1
+                    lists.append(i)
+                    # print('\n')
+                    if count >2:
+                        break
+            # print(lists[0])
+            for index,line in enumerate(content):
+                if lists[0] == line:
+                    # print(index)
+                    break
+            # failure_content = content[index-50:index]
+            print(index)
+            return index+3
+                
 def failpoint_text(full_path,linenum,testnm,key):
     if linenum:
         newlinenum = linenum - 50
@@ -45,46 +91,11 @@ def failpoint_text(full_path,linenum,testnm,key):
             #         print(line)
             content = file.readlines()
             failure_content = content[newlinenum:linenum]
-            newstring = 'Error:'
-            flag = 0
-            for line in failure_content:
-                # if perf_io or smart_verify in line:
-                #     flag = 1
-                #     print('am in perfio loop')
-                #     break
-                if newstring in line:
-                    flag = 1
-                    print('string found')
-                    break
-                
-
-            if flag == 1:
-                print ('string found')
-            else:
-                failure_content = 'mallik'
-                print('still not found - search for the error: keyword in file')
-                errorkeyword = content[:newlinenum][::-1]
-                print(type(content[:newlinenum][::-1]))
-                count = 0
-                errorline = ''
-                lists = []
-                for linenumu,i in enumerate(errorkeyword):
-                    if newstring in i:
-                        count = count + 1
-                        lists.append(i)
-                        if count >2:
-                          break
-                # print(lists[0])
-                for index,line in enumerate(content):
-                    if lists[0] == line:
-                        print(index)
-                        break
-                failure_content = content[index-50:index]
-            # print(failure_content)
             
         with open('failureresult.txt','a') as file1:
             file1.write('\n \n')
-            file1.write('Test Name: '+testnm+ 'Test ID: '+str(key)+'Launch ID: '+ str(pythonjson.launchID))
+            file1.write('Test Name: '+testnm+ ' Test ID: '+ str(key)+' Launch ID: '+ str(pythonjson.launchID))
+            file1.write('------------------======------------------------------------------------------------------\n')
             file1.write('\n')
             for i in failure_content:
                 file1.write(i)
@@ -94,7 +105,7 @@ def failpoint_text(full_path,linenum,testnm,key):
     else:
         with open('failureresult.txt','a') as file2:
             file2.write("Could be setup issue/drive issue - din't find dump logs")
-            file1.write('Test Name: '+testnm+ 'Test ID: '+str(key)+'Launch ID: '+ str(pythonjson.launchID))
+            file2.write('Test Name: '+testnm+ 'Test ID: '+str(key)+'Launch ID: '+ str(pythonjson.launchID))
             file2.write('\n')
             file2.write('------------------======------------------------------------------------------------------\n')
             file2.write('\n')
@@ -142,19 +153,6 @@ for key,testnm in zip(keyelements,tst_names):
         # print(type(i))
 		# print(type(key))
         open_folder(key,i,testnm)
-        
-
-
-#TO-DO : 
-#1.todo - pending - Remove junk data and find the exact failure -44249 ----NVMeReset_AbruptResetPSIO072_055________1689970____
-#2. exception handling -
-    #a. what if there is no dumpnvme_log - need to find out another string or just copy the last 50 lines
-            # i) smart verification log - match the string if there is no dumplog - done
-            # ii) 
-    #b. pio_timeout  - fill disk failed string - 1689980 - 44249 - done
-    #c. setget launchID - 45687 , Telemetry - 45687  - need to find out error keyword and accordingly extract lines
-
-
 
 # import re
 # import os
