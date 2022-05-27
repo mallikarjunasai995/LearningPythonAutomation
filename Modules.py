@@ -31,10 +31,75 @@ from random import choice,randint """
 #module-dunder--plscheckout sayhi and saysup files
 #---init--- checkout article and write here
 
+# https://www.analyticsvidhya.com/blog/2021/05/30-useful-methods-from-python-os-module/
 
-
+# import sys
+import os
 import sys
   
-print("This is the name of the program:", sys.argv[1])
+# print("This is the name of the program:", sys.argv[1])
   
-print("Argument List:", str(sys.argv))
+# print("Argument List:", str(sys.argv))
+# searchdir = "C:\\Users\\7330728\\Downloads"
+
+# # for path,dir,files in os.walk(searchdir):
+# #     print(path)
+# #     # print(dir)
+# #     for file in files:
+# #         print(file)
+# #         break
+
+
+# print(os.getcwd())
+# print(os.chdir('C:\\'))
+# print(os.getcwd())
+
+
+#files properties through os module
+
+# os.stat(abs_path).st_size  - here we are printing size of file
+
+
+
+
+
+#bytearray and bytes
+
+# ba = bytearray.fromhex("AA55CC3301AA55CC330F234567")
+# print(ba.reverse())
+# #how to change the number to binary
+
+# def decimalToBinary(n):
+#     return "{0:b}".format(int(n))
+# #2nd method
+# print(f"{42:b}")
+
+# print(bin(54).replace('0b',''))
+
+# bytenum = (1024).to_bytes(2, 'big')
+# print(bytenum)
+
+
+#little endian and big endian
+
+# print(sys.byteorder,sys.version,sys.path)
+
+
+# import logging
+
+# logger = logging.getLogger()
+
+# logger.debug('debug info')
+
+# import math,time
+
+# delay = time.time()+60*60
+
+
+
+
+
+#bit operators
+
+# https://www.techiedelight.com/bit-hacks-part-3-playing-rightmost-set-bit-number/
+# https://www.techiedelight.com/bit-hacks-part-4-playing-letters-english-alphabet/

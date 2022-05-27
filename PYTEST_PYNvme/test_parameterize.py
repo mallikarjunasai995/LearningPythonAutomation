@@ -5,9 +5,6 @@ import pytest
 # def test_param01(inp,out):
 #     assert (inp**inp) == out
 
-
-
-
 #parameterizing the fixtures : 
 
 @pytest.fixture(params = [(3,4),[3,5]])

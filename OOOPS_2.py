@@ -1,9 +1,27 @@
 # #inheritance #polymorphism #MRO
 # #reddit - singup for account , base regular user but moderators will also be there
-
+#has-a relationship - composition- compose bigger objects with small individual objects 
+# (car honda city example- code reusability) - call the car object in employee object itself
+#is-a relationship - inheritance
 # #inheritance - ability to define a class which inherits from another class(base or parent class)
-# #Inheritance works by passing the parent class as an argument to the child class
+# #Inheritance works by passing the parent class as an argument to the child class - code extendibility
+#code reusabillity
+#single inheritance - concept of 1 class and 1 parent
+#multilevel inheritance - inheriting classes from multiple classes grandparent --> parent --> child
+#hiereichacla inheritance - inheriting multiple child classes from one multiple parent class
+#multiple inheritance - oone child class inherting multiple parent classes 
+#cyclic inheritance - not supported by python/java
 
+#method resolution order - in which order hybrid inheritent classess should execute 
+##################### ------> (classname.mro())
+
+#innterclasses - class within class .. class universtity and class department .. 
+#                 without existing university class there won't be department classs
+#create instance of innter object ---      x = outerobject() , y = x.innterobject() , y.m1()
+
+
+
+#nested methods to avoid the repetition of the code
 
 # class Human:
 #     def __init__(self,first,last,age):
@@ -75,6 +93,20 @@ print(Meow)
 #   2. common use case is method overriding - method in base class is overriden by subclass
 # same opertion works for differnt kinds of objects -- example special methods which is shown below
 
+#operator   overloading - same operator can be used for multiple operations 
+#example - + operator in python - print(2+2), print(durga***3)
+#can't use objects addition with + operator , but magic method can be used __add__()
+
+#__str__()  : whenever we use print fucntion , internally it will call default string format method will be called
+
+#method overloading - not supported in python - same method name but different argument types- in python 
+###################### -- only last method will execute because we can't delcare type explicity - dynamic overloading
+
+
+#(if child class not satisfied with the params of parent class then we redefine child class method is called
+## method overriding)
+
+
 class Human: 
     def __init__(self, height):
         self.height = height
@@ -104,3 +136,12 @@ class GrumpyDict(dict):
 data = GrumpyDict({"name":"malli","age":"26"})
 print(data)
 
+
+
+
+
+#garbage collector - to destroy the useless objects that are filled in the memory
+#by default , GC is enabled ... 
+#gc module  - gc.enable(), gc.isenable() , gc.disable()
+#destructor = __del__() -- special method to clean up activities (resource deallocation act. ) opp. to constructor (__init__)
+#t1 = None (object elitble for gc)

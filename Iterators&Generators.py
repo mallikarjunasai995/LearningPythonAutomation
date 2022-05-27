@@ -20,3 +20,11 @@ my_for('hello',print)
 #generator - Yeild count  -- Yeild is the keyword
 #generator will take less memory and less time 
 #yield is the keyword
+
+#generator example 
+
+
+
+
+
+#zipfile and unzip files

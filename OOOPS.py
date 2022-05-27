@@ -10,8 +10,77 @@
 #self keyword refers to the current class of an instance
 
 
-# Accessing attributes and methods of one class in another class -- ??
+#python will create a class level object using PVM for every object
+#static , instance , local variables 
+#static method - general utility method @static method decorator (not using static or instance variables)
+#instance method - insdie method if we are accessing instance variable is called instance method - first argument is self
+#class method - @class method decorator we need to put , mostly we will use to access static methods within a class by passing
+               #cls variable
+
+
+
+# Accessing attributes and methods of one class in another class --
+# answer)) create parent object first then pass the parent object (not class ) to another class whcih needs that
 # Accessing Attributes and Methods in Python -- ??
+
+
+
+
+#polymorphism - operator overloading . example -- + operator used to concatenate ints and strings as well
+                # method overriding - child class has same method like parent but with some modification
+
+
+#abstraction - abstract method -only declaration bt not engouh implementation
+            # declare abstract method by using @abstractmethod decorator
+            #abstractmethod present in abc module - ABC - abstract base class
+            #abstract class contians both abstract and non abstract methods
+#interface - only contains abstract methods - service requriement specification - SRS
+
+from abc import abstractmethod
+class Vehicle:
+    @abstractmethod
+    def getNoofWheels(self):
+        pass
+
+
+#abstract class - class contains abstract methods
+
+# __variable - privare variable similary private method can also be declare but through "name manglign" we can access these also
+
+#_protected  - (single underscore) - within the class you can access like private member also 
+                # outside of class only in child class you can accesss
+
+
+#data hiding - declare private member for the variable which shouldn't be seen  - example - bank - bank balance
+                #some validation/authentication method then return the private member variable through that method in the class
+                
+
+
+
+# class student:
+#     schoolname = 'durgasoft'
+#     def __init__(self,name,rollno):
+#         self.name = name
+#         self.rollno = rollno
+#     def getStudentInfo(self): #instance method
+#         print("student name : "+ self.name)
+
+#     @classmethod
+#     def getSchoolName(cls):
+#         print("class static variable "+ cls.schoolname)
+    
+#     @staticmethod
+#     def getsum(a,b):
+#         sum = a+b
+#         return sum
+
+# delete,access instance and static varianles : 
+
+
+
+
+
+
 # Define Bank Account Below:
 # class BankAccount:
 #     def __init__(self,owner):
@@ -30,6 +99,7 @@
         
 #         self.balance = self.balance - amount
 #         return self.balance
+
         
 
 
