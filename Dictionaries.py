@@ -46,13 +46,15 @@
 # 		count = count+1
 
 
-def find_the_duplicate(lst):
-    lis = len(lst)
-    for i in range(0,lis):
-        for j in range(i+1,lis):
-            if lst[i] == lst[j]:
-                return lst[i]
-            else:
-                return None
+# def find_the_duplicate(lst):
+#     lis = len(lst)
+#     for i in range(0,lis):
+#         for j in range(i+1,lis):
+#             if lst[i] == lst[j]:
+#                 return lst[i]
+#             else:
+#                 return None
 
-find_the_duplicate([1,2,1,4,3,12])
+# find_the_duplicate([1,2,1,4,3,12])
+L=[[1,2,3],[4,5,6],[7,8,9]]
+print(len(L))
