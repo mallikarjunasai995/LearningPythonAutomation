@@ -36,3 +36,5 @@
 #lambda fucntion - nameless 
 triple = lambda x:x*3
 print(triple(3))
+
+#variable length arugments

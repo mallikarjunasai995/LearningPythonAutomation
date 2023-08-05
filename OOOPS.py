@@ -1,13 +1,25 @@
-#OOOPS........ #classes/objects
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: ipynb,py:light
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.15.0
+# ---
+
+# OOOPS........ #classes/objects
 # everything in python is object which has attributes and methods(nothing but functions in the class)
-#__ - underscore before any method represents private methods
-#Encapsulation - the grouping lo public and private attributes and methods into a programmatic class, making abstraction possible
-#Example - Designing a deck class , make cards a private attribute(list)
-#Abstraction - idea to expose only relavant data in class interface hiding private attributes and methods
-#classnames - CamelCase
-#methodnames/Variables - snakeCase
-#__init__(self,x,x) - is like constructor for a class aka default method
-#self keyword refers to the current class of an instance
+# __ - underscore before any method represents private methods
+# Encapsulation - the grouping lo public and private attributes and methods into a programmatic class, making abstraction possible
+# Example - Designing a deck class , make cards a private attribute(list)
+# Abstraction - idea to expose only relavant data in class interface hiding private attributes and methods
+# classnames - CamelCase
+# methodnames/Variables - snakeCase
+# __init__(self,x,x) - is like constructor for a class aka default method
+# self keyword refers to the current class of an instance
 
 
 #python will create a class level object using PVM for every object
@@ -43,7 +55,7 @@ class Vehicle:
         pass
 
 
-#abstract class - class contains abstract methods
+# abstract class - class contains abstract methods
 
 # __variable - privare variable similary private method can also be declare but through "name manglign" we can access these also
 
@@ -53,7 +65,7 @@ class Vehicle:
 
 #data hiding - declare private member for the variable which shouldn't be seen  - example - bank - bank balance
                 #some validation/authentication method then return the private member variable through that method in the class
-                
+
 
 
 
@@ -68,7 +80,7 @@ class Vehicle:
 #     @classmethod
 #     def getSchoolName(cls):
 #         print("class static variable "+ cls.schoolname)
-    
+
 #     @staticmethod
 #     def getsum(a,b):
 #         sum = a+b
@@ -86,17 +98,17 @@ class Vehicle:
 #     def __init__(self,owner):
 #         self.owner = owner
 #         self.balance = 0.0
-        
+
 #     def balance(self):
 #         return self.balance
-    
+
 #     def deposit(self,amount):
-        
+
 #         self.balance = self.balance + amount
 #         return self.balance
-    
+
 #     def withdraw(self,amount):
-        
+
 #         self.balance = self.balance - amount
 #         return self.balance
 

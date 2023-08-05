@@ -34,7 +34,10 @@ git branch -a --list "*telemetry*" -->
 # #logical operator - bit programming
 
 
+
 <!-- deepcopy and shallowcopy -->
 
 
+#jupyternotebook commands
+python -m jupytext --set-formats ipynb,py OOOPS.py
 
